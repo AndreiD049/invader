@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>60</x>
+      <y>170</y>
+      <w>150</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Pixel
+--
++ abs_x:int
++ abs_y:int
++ x:int
++ y:int
++ symbol:str
++ empty:bool
++ parent_name:str
+--
+isEmpty()
+get_coords()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>260</x>
+      <y>400</y>
+      <w>140</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Unit
+--
++ raw:str
++ name:str
++ body:[]-&gt;Pixel
++ width:int
++ height:int
++ x:int 
++ y:int
++ hitbox
+--
+buil_unit()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>130</x>
+      <y>350</y>
+      <w>150</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+
+
+
+
+
+&lt; consisnts of </panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0;130.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>450</x>
+      <y>70</y>
+      <w>260</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>*Stage &lt;&lt;main&gt;&gt;*
+bg=#3ef3ef
+fg=black
+//Stage, containg the screen width, height, curses elements
+--
++ field:curses.initscr()
++ width:int
++ height:int
+// containing all the units currently on the screen
++ units:array
+--
+//check if the element is at the screen border when moving it
+normlize(coord, size) &lt;&lt;static&gt;&gt;
+//Adds a unit to the screen
+add_unit(unit, x, y)
+// moves an unit that is already on the screen by x and y
+mv_unit(unit, x, y)
+del_unit(unit)
+draw_unit(unit)
+draw_units()
+frame_refresh() &gt; key
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>390</x>
+      <y>140</y>
+      <w>80</w>
+      <h>290</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>60.0;10.0;30.0;10.0;30.0;270.0;10.0;270.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>650</y>
+      <w>360</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>Rectangle
+--
++ point:Vector
++ width:Vector
++ height:Vector
+--
+check_range_collide(x, y, width, height):&lt;&lt;static&gt;&gt;
+update_rect(x, y, width, height)
+check_collision(other)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>160</x>
+      <y>540</y>
+      <w>120</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+</diagram>

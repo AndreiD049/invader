@@ -1,0 +1,9 @@
+#! /usr/bin/python3/
+
+import helpers.vector as v
+
+V1 = v.Vector(1, 2)
+V2 = v.Vector(2, 3)
+
+print(V1 + V2)
+print(v.Vector(5, 0).length())
