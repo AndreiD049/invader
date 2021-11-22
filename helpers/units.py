@@ -48,7 +48,7 @@ class Unit:
         self.color = color
         self.pos = v.Vector(0, 0)
         if not text:
-            f = open(path).readlines()
+            f = open(path, encoding="utf-8").readlines()
             f = [line[:-1] for line in f]
             self.raw = ''.join(f)
             self.body = self.build_unit(f)
